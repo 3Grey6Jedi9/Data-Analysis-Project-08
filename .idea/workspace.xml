@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc982bc2-8500-4f57-a3eb-ac4978d66f6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/prk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cc982bc2-8500-4f57-a3eb-ac4978d66f6b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +42,7 @@
       <updated>1675444138428</updated>
       <workItem from="1675444139551" duration="2068000" />
       <workItem from="1675543649713" duration="2032000" />
+      <workItem from="1676042242841" duration="711000" />
     </task>
     <servers />
   </component>
