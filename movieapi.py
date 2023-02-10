@@ -1,10 +1,14 @@
-import requests
 
-url = 'http://www.omdbapi.com/?i=tt5580390&apikey=2da3c928'
 
-response = requests.get(url)
+dependencies = ['requests==2.28.2']
 
-print(response.json())
+with open('requirements.txt', 'w') as f:
+    for dep in dependencies:
+        f.write(dep + '\n')
+
+
+        
+
 
 
 
