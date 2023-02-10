@@ -22,13 +22,15 @@ def request(id):
     response = ''
     url = 'http://www.omdbapi.com/?' + 'i=' + id + '&apikey=' + api_key
     response = requests.get(url)
-    print(response.json())
+    return response.json()
 
 
 #a = cleaner(data)
 
 
-#request(a['Parasite'])
+#print(request(a['Parasite']))
+
+
 
 
 
