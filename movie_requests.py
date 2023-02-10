@@ -25,4 +25,10 @@ def request(id):
     print(response.json())
 
 
+#a = cleaner(data)
+
+
+#request(a['Parasite'])
+
+
 
