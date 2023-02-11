@@ -26,14 +26,16 @@ def request(id):
         return movie_data
     elif response.status_code == 404:
         print("The requested resource was not found on the server")
+        return False
     elif response.status_code == 500:
         print("An error occurred on the server")
+        return False
     else:
         print("Unexpected response:", response.status_code)
+        return False
 
 
-
-request('tt5580390')
+print(request('tt5580390'))
 
 
 header = ['Movie Title', 'Runtime', 'Genre', 'Award Wins', 'Award Nominations', 'Box Office']
@@ -133,10 +135,20 @@ clean_movie(new_data)
 
 
 def main():
-    start = 0
-    while response.status_code != 200 or start == 0:
-    id = input('Welcome, would you so kind to indicate me the ID of the movie you want to know about?')
-    request(id)
+    movie_data = ''
+    while movie_data == False or movie_data == '':
+        id = input('Welcome, would you so kind to indicate me the ID of the movie you want to know about?')
+        movie_data = request(id)
+        break
+        pass
+        #Choose the id from the list
+        #then clean the data
+        #Add the data to the csv file
+        #Create a menu (1. Select movie 2. Quit --> List of movies (IDs) 2. Quit
+
+    
+
+
 
 
 
