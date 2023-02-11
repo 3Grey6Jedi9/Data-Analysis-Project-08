@@ -35,7 +35,33 @@ filename = 'movies.csv'
 a = cleaner(data)
 
 
-print(request(a['Parasite']))
+new_data = request(a['Parasite'])
+
+print(new_data)
+
+def clean_movie(data):
+    data_keys = []
+    data_values = []
+    for keys in data.keys():
+        data_keys.append(keys)
+    for values in data.values():
+        data_values.append(values)
+    for k in data_keys:
+        if k == 'Title':
+            data_keys[data_keys.index(k)] = 'Movie Title'
+        elif k == 'Awards':
+            data_keys[data_keys.index(k)] = 'Award Wins'
+        elif k == 'BoxOffice':
+            data_keys[data_keys.index(k)] = 'Box Office'
+        else:
+            continue
+    i = data_keys.index('Poster')
+    data_keys.insert(i,'Award Nominations')
+    #Now I will create the data_values list
+    
+
+
+clean_movie(new_data)
 
 #Separete the dictionary into two different lists then clean the data and put the data into a CSV file
 
@@ -61,6 +87,10 @@ print(request(a['Parasite']))
 # Do it using a list
 
 
+
+# I ask for the data
+# I clean the data
+# I add the data to a csv file
 
 
 
