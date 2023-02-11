@@ -58,7 +58,10 @@ def clean_movie(data):
     i = data_keys.index('Poster')
     data_keys.insert(i,'Award Nominations')
     #Now I will create the data_values list
-    
+    runtime_index =
+    award_winds_index =
+    box_office_index = #Use the indexes to access the data I want to modificate 
+
 
 
 clean_movie(new_data)
