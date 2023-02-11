@@ -17,13 +17,23 @@ def cleaner(data):
     return movie
 
 
-
 def request(id):
     response = ''
     url = 'http://www.omdbapi.com/?' + 'i=' + id + '&apikey=' + api_key
     response = requests.get(url)
-    movie_data = response.json()
-    return movie_data
+    if response.status_code == 200:
+        movie_data = response.json()
+        return movie_data
+    elif response.status_code == 404:
+        print("The requested resource was not found on the server")
+    elif response.status_code == 500:
+        print("An error occurred on the server")
+    else:
+        print("Unexpected response:", response.status_code)
+
+
+
+request('tt5580390')
 
 
 header = ['Movie Title', 'Runtime', 'Genre', 'Award Wins', 'Award Nominations', 'Box Office']
@@ -113,13 +123,17 @@ def clean_movie(data):
 
 
 
-# Create a csv file with the header use "a" and add the info request inside the finction I'll create
 # Ask for info
 # Clean it
 #Add it to the csv
 # End of the point 6
 
 clean_movie(new_data)
+
+
+
+def main():
+    id = input('Welcome, would you so kind to indicate me the ID of the movie you want to know about?')
 
 
 
