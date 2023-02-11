@@ -26,10 +26,12 @@ def request(id):
     return movie_data
 
 
-filename = 'movies.csv'
+header = ['Movie Title', 'Runtime', 'Genre', 'Award Wins', 'Award Nominations', 'Box Office']
 
-#with open(filename, 'a') as file:
-    #writer
+with open('movies.csv', 'a') as file:
+    writer = csv.writer(file)
+    writer.writerow(header)
+
 
 
 a = cleaner(data)
