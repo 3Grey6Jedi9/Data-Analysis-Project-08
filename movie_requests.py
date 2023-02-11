@@ -111,8 +111,6 @@ clean_movie(new_data)
 
 
 
-# I ask for the data
-# I clean the data
 # I add the data to a csv file
 
 
