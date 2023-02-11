@@ -133,7 +133,11 @@ clean_movie(new_data)
 
 
 def main():
+    start = 0
+    while response.status_code != 200 or start == 0:
     id = input('Welcome, would you so kind to indicate me the ID of the movie you want to know about?')
+    request(id)
+
 
 
 
