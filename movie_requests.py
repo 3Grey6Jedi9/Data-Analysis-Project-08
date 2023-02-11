@@ -82,7 +82,34 @@ def clean_movie(data):
         else:
             j += 1
             continue
-    print(data_values)
+    # I am going to get only the basic data asked for the movies.csv file
+    final_values = []
+    k = 0
+
+    for value in data_values:
+        if k == data_keys.index('Movie Title'):
+            final_values.append(value)
+            k += 1
+        elif k == runtime_index:
+            final_values.append(value)
+            k += 1
+        elif k == data_keys.index('Genre'):
+            final_values.append(value)
+            k += 1
+        elif k == award_winds_index:
+            final_values.append(value)
+            k += 1
+        elif k == award_winds_index + 1:
+            final_values.append(value)
+            k += 1
+        elif k == box_office_index:
+            final_values.append(value)
+            k += 1
+        else:
+            k += 1
+            continue
+
+    return final_values
 
 
 
@@ -92,7 +119,7 @@ def clean_movie(data):
 #Add it to the csv
 # End of the point 6
 
-#clean_movie(new_data)
+clean_movie(new_data)
 
 
 
