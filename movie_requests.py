@@ -84,6 +84,12 @@ def clean_movie(data):
 
 
 
+# Create a csv file with the header use "a" and add the info request inside the finction I'll create
+# Ask for info
+# Clean it
+#Add it to the csv
+# End of the point 6 
+
 clean_movie(new_data)
 
 #Separete the dictionary into two different lists then clean the data and put the data into a CSV file
