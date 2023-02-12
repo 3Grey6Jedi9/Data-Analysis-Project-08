@@ -1,4 +1,4 @@
-import requests, csv, pdb
+import requests, csv, pdb, sys
 
 from movieapi import api_key
 
@@ -35,7 +35,7 @@ def request(id):
         return False
 
 
-print(request('tt5580390'))
+#print(request('tt5580390'))
 
 
 header = ['Movie Title', 'Runtime', 'Genre', 'Award Wins', 'Award Nominations', 'Box Office']
@@ -46,10 +46,10 @@ with open('movies.csv', 'a') as file:
 
 
 
-a = cleaner(data)
+#a = cleaner(data)
 
 
-new_data = request(a['Parasite'])
+#new_data = request(a['Parasite'])
 
 #print(new_data)
 
@@ -123,20 +123,25 @@ def clean_movie(data):
 
     return final_values
 
+def menu():
+    print('''\n***   MAIN MENU   ***
+        \r Select one of the options below: 
+        a) Getting information from a movie
+        b) Quit the App''')
 
 
 def main():
-    print('''MAIN MENU
-    \r Select one of the options below: 
-    a) Getting information from a movie
-    b) Quit the App''')
+    menu()
     while ValueError:
         try:
             choice = input().lower()
             if choice != 'a' and choice !='b':
                 raise ValueError('You must enter the letter associated with each option, such as "a"')
+            elif choice == 'b':
+                sys.exit()
         except ValueError as err:
             print(f'{err}')
+            menu()
         else:
             movie_data = ''
             while movie_data == False or movie_data == '':
