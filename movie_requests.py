@@ -125,28 +125,48 @@ def clean_movie(data):
 
 
 
+def main():
+    print('''MAIN MENU
+    \r Select one of the options below: 
+    a) Getting information from a movie
+    b) Quit the App''')
+    while ValueError:
+        try:
+            choice = input().lower()
+            if choice != 'a' and choice !='b':
+                raise ValueError('You must enter the letter associated with each option, such as "a"')
+        except ValueError as err:
+            print(f'{err}')
+        else:
+            movie_data = ''
+            while movie_data == False or movie_data == '':
+                id = input('Welcome, would you so kind to indicate me the ID of the movie you want to know about?')
+                movie_data = request(id)
+                break
+                pass
+
+
+
+
+
 # Ask for info
 # Clean it
 #Add it to the csv
 # End of the point 6
 
-clean_movie(new_data)
+#clean_movie(new_data)
 
 
+if __name__ == "__main__":
+    main()
 
-def main():
-    movie_data = ''
-    while movie_data == False or movie_data == '':
-        id = input('Welcome, would you so kind to indicate me the ID of the movie you want to know about?')
-        movie_data = request(id)
-        break
-        pass
+
         #Choose the id from the list
         #then clean the data
         #Add the data to the csv file
         #Create a menu (1. Select movie 2. Quit --> List of movies (IDs) 2. Quit
 
-    
+
 
 
 
