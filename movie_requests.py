@@ -9,6 +9,7 @@ with open('oscar_winners.csv', 'r') as file:
 
 
 def cleaner(data):
+    '''It cleans the data provide from the movies so I can get the ID'''
     data_list = data.split('\n')
     data_list.pop(0)
     movie = {}
@@ -146,6 +147,10 @@ def main():
             movie_data = ''
             while movie_data == False or movie_data == '':
                 id = input('Welcome, would you so kind to indicate me the ID of the movie you want to know about?')
+                i = 1
+                for key, value in cleaner(data).items():
+                    print(f'{i}) {key}: {value}')
+                    i += 1
                 movie_data = request(id)
                 break
                 pass
@@ -164,6 +169,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
 
 
         #Choose the id from the list
