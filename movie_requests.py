@@ -36,7 +36,7 @@ def request(id):
         return False
 
 
-#print(request('tt5580390'))
+
 
 
 header = ['Movie Title', 'Runtime', 'Genre', 'Award Wins', 'Award Nominations', 'Box Office']
@@ -146,20 +146,32 @@ def main():
         else:
             movie_data = ''
             while movie_data == False or movie_data == '':
-                id = input('Welcome, would you so kind to indicate me the ID of the movie you want to know about?')
                 i = 1
                 for key, value in cleaner(data).items():
                     print(f'{i}) {key}: {value}')
                     i += 1
-                movie_data = request(id)
-                break
-                pass
+                nid = int(input('\nWould you so kind to indicate the ID of the movie you want to know about (enter the number associated)?\t'))
+                if nid in range(1,len(cleaner(data))+1):
+                    j = 1
+                    for value in cleaner(data).values():
+                        if nid == j:
+                            id = value
+                            break
+                        else:
+                            j += 1
+                            continue
+                    movie_data = request(id)
+                else:
+                    print('\nYou must enter a valid number please, try again\n')
+                    movie_data = False
 
 
 
 
 
-# Ask for info
+
+
+# Ask for info (I am here)
 # Clean it
 #Add it to the csv
 # End of the point 6
@@ -169,7 +181,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-
+    #print(request('tt5580390'))
 
 
 
@@ -177,8 +189,8 @@ if __name__ == "__main__":
 
         #Choose the id from the list
         #then clean the data
-        #Add the data to the csv file
-        #Create a menu (1. Select movie 2. Quit --> List of movies (IDs) 2. Quit
+        #Add the data to the csv file 
+
 
 
 
