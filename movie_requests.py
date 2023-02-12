@@ -41,9 +41,6 @@ def request(id):
 
 header = ['Movie Title', 'Runtime', 'Genre', 'Award Wins', 'Award Nominations', 'Box Office']
 
-with open('movies.csv', 'a') as file:
-    writer = csv.writer(file)
-    writer.writerow(header)
 
 
 
@@ -132,38 +129,48 @@ def menu():
 
 
 def main():
-    menu()
-    while ValueError:
-        try:
-            choice = input().lower()
-            if choice != 'a' and choice !='b':
-                raise ValueError('You must enter the letter associated with each option, such as "a"')
-            elif choice == 'b':
-                sys.exit()
-        except ValueError as err:
-            print(f'{err}')
-            menu()
-        else:
-            movie_data = ''
-            while movie_data == False or movie_data == '':
-                i = 1
-                for key, value in cleaner(data).items():
-                    print(f'{i}) {key}: {value}')
-                    i += 1
-                nid = int(input('\nWould you so kind to indicate the ID of the movie you want to know about (enter the number associated)?\t'))
-                if nid in range(1,len(cleaner(data))+1):
-                    j = 1
-                    for value in cleaner(data).values():
-                        if nid == j:
-                            id = value
-                            break
-                        else:
-                            j += 1
-                            continue
-                    movie_data = request(id)
-                else:
-                    print('\nYou must enter a valid number please, try again\n')
-                    movie_data = False
+    app = True
+    while app:
+        menu()
+        while ValueError:
+            try:
+                choice = input().lower()
+                if choice != 'a' and choice !='b':
+                    raise ValueError('You must enter the letter associated with each option, such as "a"')
+                elif choice == 'b':
+                    sys.exit()
+            except ValueError as err:
+                print(f'{err}')
+                menu()
+            else:
+                movie_data = ''
+                while movie_data == False or movie_data == '':
+                    i = 1
+                    for key, value in cleaner(data).items():
+                        print(f'{i}) {key}: {value}')
+                        i += 1
+                    nid = int(input('\nWould you so kind to indicate the ID of the movie you want to know about (enter the number associated)?\t'))
+                    if nid in range(1,len(cleaner(data))+1):
+                        j = 1
+                        for value in cleaner(data).values():
+                            if nid == j:
+                                id = value
+                                break
+                            else:
+                                j += 1
+                                continue
+                        movie_data = request(id)
+                        data_row = clean_movie(movie_data)
+                        with open('movies.csv', 'a') as file:
+                            writer = csv.writer(file)
+                            #if ... Verify that the csv file is empty to add the header
+                            writer.writerow(header)
+                            writer.writerow(data_row)
+                    else:
+                        print('\nYou must enter a valid number please, try again\n')
+                        movie_data = False
+                    break
+            break
 
 
 
