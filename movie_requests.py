@@ -85,10 +85,13 @@ def clean_movie(data):
             data_values.insert(j + 1, int(value.split(' ')[6]))
             j += 1
         elif j == box_office_index:
-            figure = value.split('$')[1]
-            fig_parts = figure.split(',')
-            data_values[j] = int(fig_parts[2]) + int(fig_parts[1]) * 1000 + int(fig_parts[0]) * 1000000
-            j += 1
+            if data_values[j] != 'N/A':
+                figure = value.split('$')[1]
+                fig_parts = figure.split(',')
+                data_values[j] = int(fig_parts[2]) + int(fig_parts[1]) * 1000 + int(fig_parts[0]) * 1000000
+                j += 1
+            elif data_values[j] == 'N/A':
+                j += 1
         else:
             j += 1
             continue
@@ -170,6 +173,7 @@ def main():
                                 continue
                         movie_data = request(id)
                         data_row = clean_movie(movie_data)
+                        print(data_row)
                         with open('movies.csv', 'a') as file:
                             writer = csv.writer(file)
                             if os.path.getsize("movies.csv") == 0:
@@ -185,9 +189,11 @@ def main():
 
 
 
-
 if __name__ == "__main__":
     main()
+    #print(request('tt0061184'))
+
+
 
 
 
