@@ -163,7 +163,7 @@ def main():
                         data_row = clean_movie(movie_data)
                         with open('movies.csv', 'a') as file:
                             writer = csv.writer(file)
-                            if os.path.getsize(file) > 0:
+                            if os.path.getsize("movies.csv") == 0:
                                 writer.writerow(header)
                             writer.writerow(data_row)
                     else:
@@ -189,6 +189,7 @@ def main():
 if __name__ == "__main__":
     main()
     #print(request('tt5580390'))
+    #print(os.path.getsize("prk.py"))
 
 
 
