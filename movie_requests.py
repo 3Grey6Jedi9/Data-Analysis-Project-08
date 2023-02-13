@@ -1,4 +1,4 @@
-import requests, csv, pdb, sys
+import requests, csv, pdb, sys, os
 
 from movieapi import api_key
 
@@ -163,8 +163,8 @@ def main():
                         data_row = clean_movie(movie_data)
                         with open('movies.csv', 'a') as file:
                             writer = csv.writer(file)
-                            #if ... Verify that the csv file is empty to add the header
-                            writer.writerow(header)
+                            if os.path.getsize(file) > 0:
+                                writer.writerow(header)
                             writer.writerow(data_row)
                     else:
                         print('\nYou must enter a valid number please, try again\n')
