@@ -200,7 +200,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-    #print(request('tt10618286'))
 
 
 
