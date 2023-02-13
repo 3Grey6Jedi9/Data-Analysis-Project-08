@@ -81,8 +81,9 @@ def clean_movie(data):
             data_values[j] = int(value.split(' ')[0])
             j += 1
         elif j == award_winds_index:
-            data_values[j] = int(value.split(' ')[3])
-            data_values.insert(j + 1, int(value.split(' ')[6]))
+            award_list = value.split(' ')
+            data_values[j] = award_list[award_list.index('wins')-1]
+            data_values.insert(j + 1, award_list[award_list.index('nominations')-1])
             j += 1
         elif j == box_office_index:
             if data_values[j] != 'N/A':
