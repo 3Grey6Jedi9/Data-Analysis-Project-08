@@ -3,10 +3,13 @@ import requests, csv, pdb, sys, os
 from movieapi import api_key
 
 
+#GETTING THE MOVIE'S INFO
+
 with open('oscar_winners.csv', 'r') as file:
     data = file.read()
 
 
+#CLEANING MOVIE'S INFO
 
 def cleaner(data):
     '''It cleans the data provide from the movies so I can get the ID'''
@@ -17,6 +20,8 @@ def cleaner(data):
         movie[m.split(',')[0]] = m.split(',')[1]
     return movie
 
+
+#REQUESTING INFO TO THE API
 
 def request(id):
     response = ''
@@ -43,13 +48,8 @@ header = ['Movie Title', 'Runtime', 'Genre', 'Award Wins', 'Award Nominations', 
 
 
 
+#CLEANING THE MOVIE DATA RECIEVED BY THE API
 
-#a = cleaner(data)
-
-
-#new_data = request(a['Parasite'])
-
-#print(new_data)
 
 def clean_movie(data):
     data_keys = []
@@ -121,11 +121,20 @@ def clean_movie(data):
 
     return final_values
 
+
+
+# A MENU FUNCTION JUST TO MAKE THINGS NEATER
+
 def menu():
     print('''\n***   MAIN MENU   ***
         \r Select one of the options below: 
         a) Getting information from a movie
         b) Quit the App''')
+
+
+
+# THE MAIN FUNCTION THAT RUNS THE APP
+
 
 
 def main():
@@ -177,28 +186,8 @@ def main():
 
 
 
-
-# Ask for info (I am here)
-# Clean it
-#Add it to the csv
-# End of the point 6
-
-#clean_movie(new_data)
-
-
 if __name__ == "__main__":
     main()
-    #print(request('tt5580390'))
-    #print(os.path.getsize("prk.py"))
-
-
-
-
-
-        #Choose the id from the list
-        #then clean the data
-        #Add the data to the csv file
-
 
 
 
