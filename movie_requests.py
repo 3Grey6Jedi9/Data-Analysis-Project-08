@@ -44,13 +44,13 @@ def request(id):
 
 
 
-header = ['Movie Title', 'Runtime', 'Genre', 'Award Wins', 'Award Nominations', 'Box Office']
+header = ['Movie Title', 'Rated', 'Released', 'Runtime', 'Genre', 'Director', 'Award Wins', 'Award Nominations', 'Box Office']
 
 
 
 #CLEANING THE MOVIE DATA RECIEVED BY THE API
 
-
+# I need to get 3 more columns
 def clean_movie(data):
     data_keys = []
     data_values = []
@@ -99,15 +99,23 @@ def clean_movie(data):
     # I am going to get only the basic data asked for the movies.csv file
     final_values = []
     k = 0
-
     for value in data_values:
         if k == data_keys.index('Movie Title'):
+            final_values.append(value)
+            k += 1
+        elif k == data_keys.index('Rated'):
+            final_values.append(value)
+            k += 1
+        elif k == data_keys.index('Released'):
             final_values.append(value)
             k += 1
         elif k == runtime_index:
             final_values.append(value)
             k += 1
         elif k == data_keys.index('Genre'):
+            final_values.append(value)
+            k += 1
+        elif k == data_keys.index('Director'):
             final_values.append(value)
             k += 1
         elif k == award_winds_index:
@@ -192,7 +200,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    #print(request('tt0061184'))
+    #print(request('tt10618286'))
 
 
 
