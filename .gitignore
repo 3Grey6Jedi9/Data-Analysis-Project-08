@@ -155,3 +155,5 @@ env
 
 movieapi.py
 
+.DS_Store
+
