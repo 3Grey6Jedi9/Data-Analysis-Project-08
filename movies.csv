@@ -1,14 +1,5 @@
-Movie Title,Runtime,Genre,Award Wins,Award Nominations,Box Office
-Argo,120,"Biography, Drama, Thriller",95,156,136025503
-Parasite,132,"Drama, Thriller",308,271,53369749
-Green Book,130,"Biography, Comedy, Drama",59,124,85080171
-Parasite,132,"Drama, Thriller",308,271,53369749
-Parasite,132,"Drama, Thriller",308,271,53369749
-The King's Speech,118,"Biography, Drama, History",108,206,138797449
-Who's Afraid of Virginia Woolf?,131,Drama,22,27,N/A
-Who's Afraid of Virginia Woolf?,131,Drama,22,27,N/A
-The Russians Are Coming the Russians Are Coming,126,"Comedy, War",5,13,N/A
-Parasite,132,"Drama, Thriller",308,271,53369749
-Alfie,114,"Comedy, Drama",8,22,N/A
-The Fortune Cookie,125,"Comedy, Romance",3,5,N/A
-Mank,131,"Biography, Comedy, Drama",59,268,N/A
+Movie Title,Rated,Released,Runtime,Genre,Director,Award Wins,Award Nominations,Box Office
+Parasite,R,08 Nov 2019,132,"Drama, Thriller",Bong Joon Ho,308,271,53369749
+Mank,R,04 Dec 2020,131,"Biography, Comedy, Drama",David Fincher,59,268,N/A
+Who's Afraid of Virginia Woolf?,Not Rated,22 Jun 1966,131,Drama,Mike Nichols,22,27,N/A
+The King's Speech,R,25 Dec 2010,118,"Biography, Drama, History",Tom Hooper,108,206,138797449
