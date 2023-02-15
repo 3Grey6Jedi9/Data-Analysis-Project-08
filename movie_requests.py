@@ -162,7 +162,6 @@ def main():
                     sys.exit()
             except ValueError as err:
                 print(f'{err}')
-                menu()
             else:
                 movie_data = ''
                 while movie_data == False or movie_data == '':
